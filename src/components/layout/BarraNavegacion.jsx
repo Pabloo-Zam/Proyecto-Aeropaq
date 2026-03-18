@@ -10,6 +10,10 @@ function BarraNavegacion() {
 
         <nav className="navegacion">
           <Link to="/">Inicio</Link>
+          <Link to="/servicios/nacionales">Nacionales</Link>
+          <Link to="/servicios/internacionales">Internacionales</Link>
+          <Link to="/servicios/recoleccion">Recolección</Link>
+          <Link to="/servicios/express">Exprés</Link>
           <Link to="/cotizador">Cotizador</Link>
         </nav>
       </div>

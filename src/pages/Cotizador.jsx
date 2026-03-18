@@ -5,9 +5,13 @@ function Cotizador() {
   return (
     <>
       <BarraNavegacion />
-      <main className="contenedor seccion">
-        <h1>Cotizador</h1>
-        <p>Aquí irá el formulario de cotización.</p>
+      <main className="seccion">
+        <div className="contenedor">
+          <h1>Cotizador</h1>
+          <div className="tarjeta-detalle">
+            <p>Aquí irá el formulario de cotización.</p>
+          </div>
+        </div>
       </main>
       <PiePagina />
     </>
