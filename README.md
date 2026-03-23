@@ -1,42 +1,29 @@
-a. Tecnologías y versiones
+# AeroPaq - Plataforma Web Logística
 
-Este proyecto fue desarrollado como una aplicación web estática usando React y Vite. La interfaz fue construida con JSX y CSS, manteniendo una estructura modular basada en componentes reutilizables. La navegación interna del sitio se implementó con React Router DOM, utilizando HashRouter para asegurar compatibilidad con GitHub Pages. El despliegue se realizó mediante GitHub Pages y la publicación del build se gestionó con la librería gh-pages.
+## a. Tecnologías y versiones
+Este proyecto fue desarrollado como una aplicación web estática utilizando React y Vite. La interfaz se construyó dividiendo la vista en componentes modulares y reutilizables, estilizados con CSS nativo. Para la navegación interna se implementó `react-router-dom` (usando `HashRouter` para evitar conflictos de rutas al desplegar en GitHub Pages). El despliegue final se maneja a través de GitHub Pages utilizando el paquete `gh-pages`.
 
-Tecnologías principales utilizadas:
+**Versiones principales utilizadas:**
+* Node.js (v18+)
+* React (v18.2.0)
+* Vite (v5.1.0)
+* React Router DOM (v6.x)
 
-React
-Vite
-React Router DOM
-CSS
-Git y GitHub
-GitHub Pages
-gh-pages
+## b. Cómo ejecutar el proyecto localmente
+Para probar la aplicación en tu entorno local, asegúrate de tener Node.js instalado y sigue estos pasos en tu terminal:
 
-Versiones recomendadas o utilizadas en el proyecto:
+1. Clona el repositorio:
+   `git clone https://github.com/Pabloo-Zam/Proyecto-Aeropaq.git`
+2. Ingresa a la carpeta del proyecto:
+   `cd Proyecto-Aeropaq`
+3. Instala las dependencias:
+   `npm install`
+4. Levanta el servidor de desarrollo:
+   `npm run dev`
 
-Node.js versión 18 o superior
-npm versión 9 o superior
-React 19
-Vite 7
+Al finalizar, Vite te mostrará en la consola una dirección local (usualmente `http://localhost:5173/`), a la cual puedes ingresar desde tu navegador para ver la página en vivo.
 
-
-b. Cómo ejecutar el proyecto
-
-Primero se debe clonar el repositorio en la máquina local. Después, se debe ingresar a la carpeta del proyecto e instalar las dependencias con npm. Una vez instaladas, se puede iniciar el servidor de desarrollo para visualizar la aplicación en el navegador.
-
-Comandos básicos:
-
-git clone https://github.com/TU_USUARIO/Proyecto-Aeropaq.git
-cd Proyecto-Aeropaq
-npm install
-npm run dev
-
-Después de ejecutar npm run dev, Vite mostrará una dirección local en la terminal, normalmente similar a http://localhost:5173/, desde donde se podrá abrir el proyecto en el navegador.
-
-c. Decisiones técnicas relevantes
-
-El proyecto fue organizado con una estructura modular para facilitar el mantenimiento, la escalabilidad y la reutilización de componentes. Se separaron las páginas principales, los componentes visuales, el enrutador, los estilos y las utilidades, con el objetivo de mantener una distribución clara del código.
-
-La carpeta components contiene los componentes reutilizables del sitio. Dentro de ella se separaron los componentes de estructura general, como la barra de navegación y el pie de página, y los componentes de la pantalla de inicio, como portada, servicios, cobertura, cómo funciona, nosotros, preguntas frecuentes y contacto. Esto permitió dividir la landing page en bloques independientes y fáciles de modificar.
-
-La carpeta pages contiene las vistas principales de la aplicación. Se utilizó una página de inicio, una página para el cotizador y páginas separadas para cada servicio, con el objetivo de manejar un sitio multipágina dentro de React.
+## c. Decisiones técnicas relevantes
+* **Estructura de Componentes y Vistas:** Se dividió el proyecto separando los elementos UI reutilizables (como la barra de navegación, el pie de página y las tarjetas de servicio) en la carpeta `src/components/`, y las pantallas completas en `src/pages/`. Esto mantiene el código ordenado y facilita agregar nuevas funcionalidades o rutas en el futuro.
+* **Enrutamiento:** Se optó por usar `HashRouter` en lugar del clásico `BrowserRouter`. Al ser una SPA (Single Page Application) estática alojada en GitHub Pages, esto previene el clásico error 404 que ocurre al intentar recargar la página directamente desde rutas específicas como la del cotizador.
+* **Cotizador Dinámico en el Frontend:** Toda la lógica del cálculo de tarifas de envíos se maneja de forma reactiva en el cliente mediante estados de React (`useState`). Esto permite mostrarle al usuario el desglose de precios al instante, sin necesidad de conectarse a un servidor externo o recargar la página.
